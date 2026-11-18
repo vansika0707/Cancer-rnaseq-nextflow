@@ -3,7 +3,7 @@
 #SBATCH --partition=short
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=2G
+#SBATCH --mem=4G
 #SBATCH --time=04:00:00
 #SBATCH --output=logs/dl_crc_%j.out
 #SBATCH --error=logs/dl_crc_%j.err
