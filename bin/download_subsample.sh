@@ -12,12 +12,12 @@ set -eu
 TSV=${1:?usage: download_subsample.sh runs.tsv [N_PAIRS] [OUT_DIR]}
 N=${2:-5000000}
 OUT=${3:-/scratch/$USER/cancer-rnaseq/raw}
-LINES=$((N * 4))        # a FASTQ record is 4 lines
+NLINES=$((N * 4))       # a FASTQ record is 4 lines. (Not named LINES: bash reserves that for terminal height.)
 
 mkdir -p "$OUT"
 
 # Skip the header line, then read: run, sample, patient, condition
-tail -n +2 "$TSV" | while IFS=$'\t' read -r run sample patient condition; do
+while IFS=$'\t' read -r run sample patient condition; do
     for r in 1 2; do
         dest="$OUT/${sample}_R${r}.fastq.gz"
 
@@ -30,18 +30,18 @@ tail -n +2 "$TSV" | while IFS=$'\t' read -r run sample patient condition; do
         echo "downloading $sample R$r from $url"
 
         # Write to a temp name first so a failed download never looks finished
-        curl -sf "$url" | gunzip -c | head -n "$LINES" | gzip > "$dest.tmp" || true
+        curl -sf "$url" | gunzip -c | head -n "$NLINES" | gzip > "$dest.tmp" || true
 
         # Check we really got N records (head closing the pipe makes curl complain, so we verify here)
         got=$(gunzip -c "$dest.tmp" | wc -l)
-        if [ "$got" -ne "$LINES" ]; then
-            echo "ERROR: $sample R$r has $got lines, expected $LINES" >&2
+        if [ "$got" -ne "$NLINES" ]; then
+            echo "ERROR: $sample R$r has $got lines, expected $NLINES" >&2
             rm -f "$dest.tmp"
             exit 1
         fi
         mv "$dest.tmp" "$dest"
     done
-done
+done < <(tail -n +2 "$TSV")   # process substitution keeps the loop in the main shell, so exit 1 stops the whole script
 
 echo "done. files in $OUT"
 ls -lh "$OUT"
