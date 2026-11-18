@@ -1,0 +1,13 @@
+sample,patient,condition,fastq_1,fastq_2
+AMC17_tumor,AMC17,tumor,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC17_tumor_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC17_tumor_R2.fastq.gz
+AMC17_normal,AMC17,normal,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC17_normal_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC17_normal_R2.fastq.gz
+AMC22_tumor,AMC22,tumor,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC22_tumor_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC22_tumor_R2.fastq.gz
+AMC22_normal,AMC22,normal,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC22_normal_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC22_normal_R2.fastq.gz
+AMC21_tumor,AMC21,tumor,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC21_tumor_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC21_tumor_R2.fastq.gz
+AMC21_normal,AMC21,normal,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC21_normal_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC21_normal_R2.fastq.gz
+AMC13_tumor,AMC13,tumor,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC13_tumor_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC13_tumor_R2.fastq.gz
+AMC13_normal,AMC13,normal,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC13_normal_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC13_normal_R2.fastq.gz
+AMC7_tumor,AMC7,tumor,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC7_tumor_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC7_tumor_R2.fastq.gz
+AMC7_normal,AMC7,normal,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC7_normal_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC7_normal_R2.fastq.gz
+AMC8_tumor,AMC8,tumor,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC8_tumor_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC8_tumor_R2.fastq.gz
+AMC8_normal,AMC8,normal,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC8_normal_R1.fastq.gz,/scratch/kambhampati.v/cancer-rnaseq/raw/AMC8_normal_R2.fastq.gz
