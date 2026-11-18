@@ -21,6 +21,9 @@ data/index/
 singularity_cache/
 apptainer_cache/
 
+# SLURM job logs
+logs/
+
 # R / editor / OS
 .Rhistory
 .RData
