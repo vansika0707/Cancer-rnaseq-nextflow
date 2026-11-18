@@ -1,0 +1,29 @@
+# Nextflow runtime files
+work/
+.nextflow/
+.nextflow.log*
+results/
+timeline*.html
+report*.html
+trace*.txt
+dag*.html
+
+# Large data: never commit raw reads or indexes
+data/raw/
+data/index/
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.bam
+*.sf
+
+# Apptainer/Singularity image cache
+singularity_cache/
+apptainer_cache/
+
+# R / editor / OS
+.Rhistory
+.RData
+.Rproj.user/
+.vscode/
+.DS_Store
