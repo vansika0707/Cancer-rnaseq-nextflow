@@ -1,3 +1,5 @@
+include { FASTP } from './modules/fastp.nf'
+
 include { FASTQC } from './modules/fastqc.nf'
 
 workflow {
@@ -10,4 +12,5 @@ workflow {
         }
 
     FASTQC(samples_ch)
+    include { FASTP } from './modules/fastp.nf'
 }
