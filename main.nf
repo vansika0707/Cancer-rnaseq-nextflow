@@ -3,6 +3,7 @@ include { FASTP } from './modules/fastp.nf'
 include { FASTQC } from './modules/fastqc.nf'
 include { SALMON_INDEX } from './modules/salmon_index.nf'
 include { SALMON_QUANT } from './modules/salmon_quant.nf'
+include { MULTIQC } from './modules/multiqc.nf'
 
 workflow {
     // Read the sample sheet and make one item per sample: (sample_name, [fastq_1, fastq_2])
@@ -20,4 +21,11 @@ workflow {
     SALMON_INDEX(file(params.transcripts))
 
         SALMON_QUANT(FASTP.out.reads, SALMON_INDEX.out)
+
+    multiqc_ch = FASTQC.out
+    .mix(FASTP.out.json)
+    .mix(SALMON_QUANT.out.map { sample, dir -> dir })
+    .collect()
+
+MULTIQC(multiqc_ch)
 }
